@@ -135,7 +135,7 @@ async function offstageJobDetails(url) {
         let jobDescription = jobParse.querySelector('.itemDescr p');
         jobDescription.querySelector('form').remove();
         let contactInfo = '';
-        try {jobParse.querySelector('.emu').innerHTML.replace('(at)', '@').replace('(dot)', ".") } catch {}
+        try { contactInfo = jobParse.querySelector('.emu').innerHTML.replace('(at)', '@').replace('(dot)', ".") } catch {}
         let details = {
             title: jobParse.querySelector('.itemh1 a').innerHTML,
             company: jobParse.querySelector('.itemh2').innerHTML.replace(/\n/g, '').replace(/\t/g, '').replace(/\r/g, ''),
