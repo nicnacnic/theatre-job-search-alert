@@ -136,6 +136,8 @@ async function offstageJobDetails(url) {
         jobDescription.querySelector('form').remove();
         let contactInfo = '';
         try { contactInfo = jobParse.querySelector('.emu').innerHTML.replace('(at)', '@').replace('(dot)', ".") } catch {}
+        let website = "";
+        try  { website = jobParse.querySelector('.itemContact h4 a').innerHTML } catch {}
         let details = {
             title: jobParse.querySelector('.itemh1 a').innerHTML,
             company: jobParse.querySelector('.itemh2').innerHTML.replace(/\n/g, '').replace(/\t/g, '').replace(/\r/g, ''),
@@ -143,7 +145,7 @@ async function offstageJobDetails(url) {
             country: 'Unknown',
             description: jobDescription.innerHTML.replace(/\n/g, '').replace(/\t/g, '').replace(/\r/g, '').replace('+ndash;', '-'),
             contactEmail: contactInfo,
-            website: jobParse.querySelector('.itemContact h4 a').innerHTML,
+            website: website,
             url: url,
         }
         resolve(details);
