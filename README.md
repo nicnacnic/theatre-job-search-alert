@@ -8,6 +8,13 @@ The following services are checked using this script:
 
 More may be added in the future.
 
+# Installation
+1. Clone the repo, `git clone https://github.com/nicnacnic/theatre-job-search-alert.git`
+2. Install dependencies, `npm i`
+3. Create config, see below.
+4. Run the script, `node index.js`
+5. Optionally, add to cron job, task scheduler or pm2.
+
 # Configuration
 To make this script work, create a configuration file in the main folder called `config.json`. Them, add the following text:
 ```json
